@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="wrapper">
+
+    <div class="row">
+      <div class="col-xs-12">
+        <%= link_to "Add Calendar", new_calendar_path() %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Your Calendars</h2>
+
+        <div class="calendar_list">
+          <% @calendars.each do |calendar| %>
+          <div class="row">
+            <div class="col-xs-12">
+              <span style="background-color:<%= calendar.color %>" class="circle circle_icon"></span>
+              <%= link_to calendar.name, calendar_path(calendar) %>, <%= calendar.color %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
