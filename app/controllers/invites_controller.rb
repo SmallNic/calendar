@@ -13,6 +13,7 @@ class InvitesController < ApplicationController
 
 
   def decline
+    @calendar = Calendar.find(params[:calendar_id])
     invite = Invite.find_by(calendar_id:@calendar.id, recipient:current_user.id)
     invite.destroy
     redirect_to calendars_path
