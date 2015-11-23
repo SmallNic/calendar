@@ -25,6 +25,18 @@ class EventsController < ApplicationController
     @calendar = Calendar.find(params[:calendar_id])
   end
 
+  def update
+    @event = Event.find(params[:id])
+    @calendar = Calendar.find(params[:calendar_id])
+    @event.update(event_params)
+    if @event.save
+      redirect_to calendar_path(@calendar)
+    else
+      render :edit
+    end
+
+  end
+
 
   private
 

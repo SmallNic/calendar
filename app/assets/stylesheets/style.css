@@ -91,7 +91,19 @@
 }
 
 .event_time {
-  border-right: 1px solid #CC4E5C;
+  vertical-align: top;
+  display:inline-block;
+  width:130px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.event_descrip {
+  border-left: 1px solid #CC4E5C;
+
+  display:inline-block;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .event_detail {

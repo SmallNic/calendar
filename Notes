@@ -1,0 +1,21 @@
+Maybe users can send requests.
+Request:
+from_whom - integer/references user id
+to_whom - integer/references user id
+calendar - integer/references calendar id
+accepted - boolean
+
+And maybe User can have a new_cal_request attribute.
+User:
+new_cal_request: boolean
+
+If User.new_cal_request,
+  Search the to_whom field of all Request objects
+  if there is a match,
+    temporarily allow the user to see the calendar(?)
+    Show the user that calendar
+    Ask if the user would like to be a participant in that calendar
+    If yes,
+      create new entry in users_calendars table linking User to Calendar
+    Else
+      do not creat entry
