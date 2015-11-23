@@ -28,6 +28,25 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Your Open Invites</h2>
+
+        <div class="calendar_list">
+          <% @invites.each do |invite| %>
+          <div class="row">
+            <div class="col-xs-12">
+              Invite from: <%= User.find(invite.user_id).email %><br>
+              Calendar: <%= Calendar.find(invite.calendar.id).name %><br>
+              <%= link_to "Accept", accept_path(calendar_id:Calendar.find(invite.calendar.id)) %> / <%= link_to "Decline", decline_path(calendar_id:Calendar.find(invite.calendar.id)) %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
 
   </div>
 </div>

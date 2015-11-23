@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recipient: 1
+  calendar_id: 
+  status: MyString
+  user_id: 
+
+two:
+  recipient: 1
+  calendar_id: 
+  status: MyString
+  user_id: 
